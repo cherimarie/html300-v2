@@ -1,6 +1,138 @@
-// Import partials here
-@import 'base.normalize';
+/* Adding in partial */
 @import 'settings.variables';
-@import 'settings.responsive';
-@import 'components.content';
 
+@mixin border-rule {
+  border-top: 1px solid $ltgray;
+  padding: 0 0 0.5em 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Setting html and body height to 100% so bkgrd image will fill page */
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
+  width: 85%;
+  height: 100%;
+}
+
+/* Adding full page image to background */
+.bkgrd-img {
+  background-image: url('../images/egg-bkgrd.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  ul {
+    margin: auto;
+  }
+  a {
+    border: none;
+    opacity: 80%;
+  }
+}
+
+.intro-text {
+  position: absolute;
+  width: 45%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  p {
+    font-size: 1.5em;
+    line-height: 1.4em;
+  }
+}
+
+header, h2, h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+header img {
+  width: 45%;
+}
+
+h2 {
+  font-family: 'Barlow', sans-serif;
+  font-size: 2.7em;
+  padding: 0.5em 0 0.8em 0;
+}
+
+h3 {
+  font-size: 1.4em;
+  padding-top: 1em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+ul {
+    margin-left: auto;
+  li {
+    font-size: 0.9em;
+    padding: 0 0.3em 0 0.3em;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 $yellow;
+  }
+  a {
+    text-decoration: none;
+    border: 1px solid $yellow;
+    line-height: 0.7em;
+    background-color: #fff;
+  }
+}
+
+a:hover {
+  color: $dkgray;
+  box-shadow: inset 0 -3em 0 0 $yellow;
+  transition: 0.25s;
+}
+
+p {
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9em;
+}
+
+/* Fix here to correct bkgrd image
+.bkgrd-img {
+  position: absolute;
+  margin-left: -2em;
+  z-index: 0;
+}
+
+.intro-title {
+  position: relative;
+  left: 30%;
+  top: 35%;
+  z-index: 1;
+}
+
+.intro-copy {
+  font-size: 1.2em;
+  padding-top: 1em;
+  width: 60%;
+  margin-left: 0.4em;
+}
+*/
+
+footer {
+  @include border-rule;
+  font-size: 0.7em;
+  padding: 1em 0 1em 0em;
+  margin-top: 3em;
+}
+
+/* Shifting nav to left side when in mobile view */
+@media screen and (max-width: 576px) {
+  ul {
+    margin: 0.5em 0 0 0;
+  }
+}

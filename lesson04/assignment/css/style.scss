@@ -1,0 +1,60 @@
+/* Adding a partial and a mixin */
+@import 'settings.variables';
+
+@mixin border-rule {
+  border-top: 1px solid;
+  padding: 1em 0 3em 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
+  margin-left: 2em;
+  width: 85%;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  padding-bottom: 2.5em;
+}
+
+h1 {
+  margin-right: auto;
+  font-size: 2.9em;
+}
+
+/* Nesting the navigation bar elements */
+nav {
+  li {
+    display: inline-block;
+    margin-left: 0.5em;
+    padding: 0.2em 2em 0.2em 2em;
+    font-size: 1em;
+    border: 1px solid $yellow;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 $yellow;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+/* Adding hover effect to menu item that fills its box with yellow and shifts it downward */
+.box-fill:hover {
+  box-shadow: inset 0 -3em 0 0 $yellow;
+  transition: 0.25s;
+  transform: translateY(5px);
+}
+
+main {
+  @include border-rule;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.9em;
+}

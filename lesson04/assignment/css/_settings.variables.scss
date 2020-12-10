@@ -1,0 +1,11 @@
+// Establishing colors
+$dkgray: #4d4d4d;
+$ltgray: #f2f2f2;
+$yellow: #ffcc00;
+$ltyellow: #fff5cc;
+
+
+// Applying to CSS properties
+h1, a, .border-rule {
+  color: $dkgray;
+}
