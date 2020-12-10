@@ -1,14 +1,14 @@
 <template>
   <div>
-    
+      <img :src="source" width=80%>
   </div>
 </template>
 
 
 <script>
 export default {
-  name: 'image',
-  props: ['image'],
+  name: 'Image',
+  props: ['source'],
 }
 </script>
 

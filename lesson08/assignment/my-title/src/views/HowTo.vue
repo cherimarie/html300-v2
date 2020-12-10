@@ -4,6 +4,7 @@
   <!--  <image v-for="image in images" v-bind:key="image.alt"></image>  -->
   <section class="col-sm-6">
     <div class="pb-5" v-for="technique in techniques" v-bind:key="technique.title">
+      <Image :source="technique.img"></Image>
       <h3 class="mt-4 pb-1">{{technique.title}}</h3>
       <p>{{technique.contentA}}</p>
       <p>{{technique.contentB}}</p>
@@ -13,20 +14,21 @@
 </template>
 
 <script>
-//import Image from '../components/Image.vue';
+import Image from '../components/Image.vue';
 //import Header from '../components/Header.vue';
 //import mixin from '../mixin';
 
 export default {
   name: 'methods',
     components: {
-//  'image': Image,
+      'Image': Image
 //    'method-header': Header
     },
   data () {
     return {
       techniques: [
         {title: "BOILED",
+          img: require('../assets/hard-boiled.jpg'),
           // Use a backslash after lines of text so Javascript knows the string is continued; otherwise, errors occur
           contentA: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod \
           tempor incididunt ut labore et dolore magna aliqua. In egestas erat imperdiet sed euismod.\
@@ -52,6 +54,7 @@ export default {
           ac placerat.",
         },
         {title: "SCRAMBLED",
+          img: require('../assets/scrambled.jpg'),
           contentA: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod \
           tempor incididunt ut labore et dolore magna aliqua. In egestas erat imperdiet sed euismod.\
           Maecenas sed enim ut sem viverra aliquet eget sit amet. Libero volutpat sed cras ornare \
@@ -76,6 +79,7 @@ export default {
           ac placerat.",
         },
         { title: "FRIED",
+          img: require('../assets/overeasy.jpg'),
           contentA: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod \
           tempor incididunt ut labore et dolore magna aliqua. In egestas erat imperdiet sed euismod.\
           Maecenas sed enim ut sem viverra aliquet eget sit amet. Libero volutpat sed cras ornare \
@@ -100,6 +104,7 @@ export default {
           ac placerat.",
         },
           {title: "POACHED",
+          img: require('../assets/poached.jpg'),
           contentA: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod \
           tempor incididunt ut labore et dolore magna aliqua. In egestas erat imperdiet sed euismod.\
           Maecenas sed enim ut sem viverra aliquet eget sit amet. Libero volutpat sed cras ornare \
