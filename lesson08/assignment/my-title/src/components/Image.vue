@@ -1,14 +1,14 @@
 <template>
   <div>
-      <img :src="source" width=80%>
+      <img :src="require(`../assets/${imageName}`)" width=80%>
   </div>
 </template>
 
 
 <script>
 export default {
-  name: 'Image',
-  props: ['source'],
+  name: 'image',
+  props: ['imageName'],
 }
 </script>
 
